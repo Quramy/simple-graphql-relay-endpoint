@@ -1,6 +1,6 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import { schema } from './schema/schema';
+import schema from './schema';
 
 const GRAPHQL_PORT = 4200;
 

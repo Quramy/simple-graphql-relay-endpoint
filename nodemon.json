@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "ignore": [".*.swp", ".*.swo"],
+  "execMap": {
+    "js": "babel-node"
+  }
+}

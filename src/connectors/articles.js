@@ -1,7 +1,7 @@
 import NeDB from 'nedb';
 import { converter } from './util';
 
-const articleDocuments = new NeDB({filename: 'db/articles', autoload: true});
+const articleDocuments = new NeDB({ filename: 'db/articles', autoload: true });
 
 export const articles = {
   findById(id) {
@@ -14,6 +14,7 @@ export const articles = {
       });
     });
   },
+
   findByAuthor(authorId) {
     return new Promise((res, rej) => {
       articleDocuments.find({ authorId }, (err, docs) => {
@@ -24,6 +25,7 @@ export const articles = {
       });
     });
   },
+
   findAll() {
     return new Promise((res, rej) => {
       articleDocuments.find({}, (err, docs) => {
@@ -34,6 +36,7 @@ export const articles = {
       });
     });
   },
+
   add({ title, content, authorId }){
     return new Promise((res, rej) => {
       const newArticle = {

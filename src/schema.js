@@ -21,8 +21,8 @@ import {
   offsetToCursor,
 } from 'graphql-relay';
 
-import { users } from '../connectors/users';
-import { articles } from '../connectors/articles';
+import { users } from './connectors/users';
+import { articles } from './connectors/articles';
 
 const ArticleType = new GraphQLObjectType({
   name: 'Article',
@@ -183,7 +183,9 @@ const Mutation = new GraphQLObjectType({
   },
 });
 
-export const schema = new GraphQLSchema({
+const schema = new GraphQLSchema({
   query: Query,
   mutation: Mutation,
 });
+
+export default schema;

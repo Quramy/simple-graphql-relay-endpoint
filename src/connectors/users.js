@@ -1,13 +1,13 @@
 import NeDB from 'nedb';
-import {converter} from './util';
+import { converter } from './util';
 import * as _ from 'lodash';
 
-const userDocuments = new NeDB({filename: 'db/users', autoload: true});
+const userDocuments = new NeDB({ filename: 'db/users', autoload: true });
 
 export const users = {
   findById(id) {
     return new Promise((res, rej) => {
-      userDocuments.findOne({_id: id}, (err, docs) => {
+      userDocuments.findOne({ _id: id }, (err, docs) => {
         if(err) {
           rej(err);
           return;
@@ -16,7 +16,8 @@ export const users = {
       });
     });
   },
-  find({name, limit}) {
+
+  find({ name, limit }) {
     return new Promise((res, rej) => {
       const q = {};
       if(name) q.name = new RegExp(name);
@@ -29,7 +30,8 @@ export const users = {
       });
     }).then(users => _.sortBy(users, ['createdAt']));
   },
-  add({name, profileUrl}) {
+
+  add({ name, profileUrl }) {
     return new Promise((res, rej) => {
       const newUser = {
         name,
@@ -45,9 +47,10 @@ export const users = {
       });
     });
   },
+
   delete(id) {
     return new Promise((res, rej) => {
-      userDocuments.remove({_id: id}, {}, (err, numRemoved) => {
+      userDocuments.remove({ _id: id }, {}, (err, numRemoved) => {
         if(err) {
           rej(err);
           return
