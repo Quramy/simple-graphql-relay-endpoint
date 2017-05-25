@@ -18,5 +18,5 @@ server.use((req, res, next) => {
   }
 });
 
-server.use('/graphql', graphqlHTTP({ schema, pretty: true }));
+server.use('/graphql', graphqlHTTP({ schema, pretty: true, graphiql: true }));
 server.listen(GRAPHQL_PORT, () => console.log(`GraphQL Server is now running on http://localhost:${GRAPHQL_PORT}/graphql`));

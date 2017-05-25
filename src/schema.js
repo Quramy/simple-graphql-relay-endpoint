@@ -70,13 +70,13 @@ const Viewer = new GraphQLObjectType({
     greeting: {
       type: GraphQLString,
       resolve() {
-        return 'Hello ng2 + Relay';
+        return 'Hello GraphQL';
       }
     },
     me: {
       type: UserType,
       resolve(viewer) {
-        return users.find({ name: 'quramy' }).then(userList => {
+        return users.find({ }).then(userList => {
           return userList[0];
         });
       },

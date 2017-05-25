@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "description": "Simple GraphQL and Relay server implemented by JavaScript",
   "scripts": {
-    "start": "nodemon ./src/server.js",
+    "watch": "nodemon ./src/server.js",
+    "start": "babel-node ./src/server.js",
     "clean": "rimraf dist",
-    "updateSchema": "mkdirp dist && babel-node generate.js"
+    "clean-db": "rimraf db && mkdirp db",
+    "init-db": "npm run clean-db && babel-node scripts/init-user > db/users",
+    "gen": "mkdirp dist && babel-node scripts/build-client-schema.js"
   },
   "repository": {
     "type": "git",
