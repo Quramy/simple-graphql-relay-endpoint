@@ -1,7 +1,7 @@
 {
   "name": "simple-graphql-relay-endpoint",
   "version": "0.1.0",
-  "description": "Simple GraphQL and Relay server implemented by JavaScript",
+  "description": "Simple GraphQL and Relay server",
   "scripts": {
     "watch": "nodemon ./src/server.js",
     "start": "babel-node ./src/server.js",
@@ -15,9 +15,8 @@
     "url": "git+https://github.com/apollostack/apollo-starter-kit.git"
   },
   "keywords": [
-    "Node.js",
-    "Javascript",
     "GraphQL",
+    "Relay",
     "Express"
   ],
   "author": "Quramy <yosuke.kurami@gmail.com>",

@@ -1,6 +1,6 @@
 # Simple GraphQL Relay Endpoint
 
-It's a simple GraphQL server implementation compatible RelayQL.
+It's a simple GraphQL server example compatible RelayQL.
 
 ## Install
 
